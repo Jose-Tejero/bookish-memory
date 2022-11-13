@@ -26,6 +26,7 @@ const Videos = db.define('videos', {
       model: Courses,
       key: 'id',
     },
+    field: 'course_id',
   },
 }, {
   timestamps: false,
