@@ -1,6 +1,7 @@
 const express = require('express');
 const initModels = require('./models/initModels');
 const db = require('./utils/database');
+const userRouters = require('./routes/user.routes');
 
 require('dotenv').config();
 
@@ -19,6 +20,8 @@ db.sync({ force: false })
   .catch((error) => console.log(error));
 
 initModels();
+
+app.use('/api/v1', userRouters)
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
