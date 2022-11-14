@@ -10,16 +10,6 @@ const createCourseToUser = async (req, res) => {
   }
 };
 
-const getAllCourses = async (req, res) => {
-  try {
-    const result = await UsersCoursesServices.getAll();
-    res.status(200).json(result);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 module.exports = {
   createCourseToUser,
-  getAllCourses,
 };

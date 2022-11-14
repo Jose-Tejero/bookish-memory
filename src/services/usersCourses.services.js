@@ -9,15 +9,6 @@ class UsersCorusesServices {
       throw error;
     }
   };
-
-  static async getAll() {
-    try {
-      const result = await UsersCourses.findAll();
-      return result;
-    } catch (error) {
-      throw error;
-    }
-  };
 };
 
 module.exports = UsersCorusesServices;
