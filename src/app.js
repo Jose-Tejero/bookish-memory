@@ -4,6 +4,7 @@ const db = require('./utils/database');
 const userRouters = require('./routes/user.routes');
 const usersCoursesRouters = require('./routes/usersCourses.routes');
 const coursesRouters = require('./routes/courses.routes');
+const videosRouters = require('./routes/videos.routes');
 
 require('dotenv').config();
 
@@ -26,6 +27,7 @@ initModels();
 app.use('/api/v1', userRouters);
 app.use('/api/v1', usersCoursesRouters);
 app.use('/api/v1', coursesRouters);
+app.use('/api/v1', videosRouters);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
