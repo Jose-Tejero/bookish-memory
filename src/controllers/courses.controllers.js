@@ -29,8 +29,21 @@ const postNewCourse = async (req, res) => {
   }
 };
 
+const putCourse = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const courseData = req.body;
+    const result = await CoursesServices.update(id, courseData);
+    res.status(200).json({ message: 'Curso actualizado' });
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   getAllCourses,
   getAllCoursesWithCategoriesAndVideos,
   postNewCourse,
+  putCourse,
 };
