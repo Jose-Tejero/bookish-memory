@@ -9,6 +9,15 @@ class VideosServices {
       throw error;
     }
   };
+
+  static async destroyVideo(id) {
+    try {
+      const result = await Videos.destroy({ where: { id } });
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
 };
 
 module.exports = VideosServices;
