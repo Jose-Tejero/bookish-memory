@@ -30,8 +30,20 @@ const createUser = async (req, res) => {
   }
 };
 
+const putUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const userData = req.body;
+    const result = await UserServices.updateUser(id, userData);
+    res.status(200).json({ message: 'Usuario actualizado' });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   getUserById,
   getUserWithCourses,
   createUser,
+  putUser,
 };

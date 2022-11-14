@@ -42,6 +42,16 @@ class UserServices {
       throw error;
     }
   };
+
+  static async updateUser(id, userData) {
+    try {
+      const { firstName, lastName, password } = userData;
+      const result = await Users.update({ firstName, lastName, password }, { where: { id } });
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 };
 
 module.exports = UserServices;
