@@ -5,6 +5,7 @@ const userRouters = require('./routes/user.routes');
 const usersCoursesRouters = require('./routes/usersCourses.routes');
 const coursesRouters = require('./routes/courses.routes');
 const videosRouters = require('./routes/videos.routes');
+const categoriesRouters = require('./routes/categories.routes')
 
 require('dotenv').config();
 
@@ -28,6 +29,7 @@ app.use('/api/v1', userRouters);
 app.use('/api/v1', usersCoursesRouters);
 app.use('/api/v1', coursesRouters);
 app.use('/api/v1', videosRouters);
+app.use('/api/v1', categoriesRouters);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
