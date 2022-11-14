@@ -37,6 +37,15 @@ class CoursesServices {
       throw error;
     }
   };
+
+  static async add(newCourse) {
+    try {
+      const result = await Courses.create(newCourse);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
 };
 
 module.exports = CoursesServices;

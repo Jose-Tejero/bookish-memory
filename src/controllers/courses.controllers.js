@@ -19,7 +19,18 @@ const getAllCoursesWithCategoriesAndVideos = async (req, res) => {
   }
 };
 
+const postNewCourse = async (req, res) => {
+  try {
+    const newCourse = req.body;
+    const result = await CoursesServices.add(newCourse);
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   getAllCourses,
   getAllCoursesWithCategoriesAndVideos,
+  postNewCourse,
 };
