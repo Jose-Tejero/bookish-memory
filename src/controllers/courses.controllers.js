@@ -10,6 +10,16 @@ const getAllCourses = async (req, res) => {
   }
 };
 
+const getAllCoursesWithCategoriesAndVideos = async (req, res) => {
+  try {
+    const result = await CoursesServices.getAllJoinCategoriesJoinVideos();
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   getAllCourses,
+  getAllCoursesWithCategoriesAndVideos,
 };
